@@ -68,3 +68,14 @@ carape varchar(44),
 stilfrizura varchar(42),
 punica int not null
 );
+
+alter table mladic add foreign key(zarucnik) references zarucnik(sifra);
+
+alter table ostavljena add foreign key(punica) references punica(sifra);
+
+alter table punica add foreign key(punac) references punac(sifra);
+
+alter table punac add foreign key(svekar) references svekar(sifra);
+
+alter table svekar_cura add foreign key(svekar) references svekar(sifra);
+alter table svekar_cura add foreign key(cura) references cura(sifra);
