@@ -69,3 +69,14 @@ suknja varchar(30) not null,
 majica varchar(44) not null,
 prviputa datetime not null
 );
+
+alter table svekrva add foreign key(punac) references punac(sifra);
+
+alter table decko add foreign key(zena) references zena(sifra);
+
+alter table zena add foreign key(brat) references brat(sifra);
+
+alter table brat add foreign key(prijatelj) references prijatelj(sifra);
+
+alter table prijatelj_ostavljena add foreign key(prijatelj) references prijatelj(sifra);
+alter table prijatelj_ostavljena add foreign key(ostavljena) references ostavljena(sifra);
