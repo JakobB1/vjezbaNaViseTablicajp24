@@ -86,3 +86,37 @@ alter table muskarac add foreign key(zena) references zena(sifra);
 alter table zena add foreign key(sestra) references sestra(sifra);
 
 alter table cura add foreign key(punac) references punac(sifra);
+
+
+select * from sestra;
+
+insert into sestra(haljina,hlace,narukvica)
+values('Plava haljina','Plave hlace',4),
+('Zelena haljina','Zelene hlace',5),
+('Zuta haljina','Zute hlace',6);
+
+select * from zena;
+
+insert into zena(kratkamajica,jmbag,bojaociju,sestra)
+values('Plava kratka',111111,'zelena',1),
+('Zelena kratka',222222,'plava',2),
+('Zuta kratka',333333,'zuta',3);
+
+select * from muskarac
+
+insert into muskarac(bojaociju,maraka,zena)
+values('Plava',1.10,1),
+('Zelena',2.20,2),
+('Zuta',3.30,3);
+
+select * from svekar 
+
+insert into svekar(bojaociju,eura,majica)
+values('Plava',10.00,'Plava majica'),
+('Zelena',20.00,'Zelena majica'),
+('Zuta',30.00,'Zuta majica');
+
+select * from sestra_svekar
+
+insert into sestra_svekar(sestra,svekar) 
+values(1,3),(3,1),(2,2);
