@@ -67,3 +67,14 @@ treciputa datetime,
 prviputa datetime,
 muskarac int not null
 );
+
+alter table cura add foreign key(prijateljica) references prijateljica(sifra);
+
+alter table brat add foreign key(neprijatelj) references neprijatelj(sifra);
+
+alter table neprijatelj add foreign key(becar) references becar(sifra);
+
+alter table becar add foreign key(muskarac) references muskarac(sifra);
+
+alter table muskarac_decko add foreign key(decko) references decko(sifra);
+alter table muskarac_decko add foreign key(muskarac) references muskarac(sifra);
