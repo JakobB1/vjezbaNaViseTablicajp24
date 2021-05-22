@@ -14,7 +14,7 @@ narukvica int not null
 create table sestra_svekar(
 sifra int not null primary key auto_increment,
 sestra int,
-svekat int
+svekar int
 );
 
 create table svekar(
@@ -75,3 +75,14 @@ bojakose varchar(38),
 suknja varchar(36),
 punac int
 );
+
+alter table sestra_svekar add foreign key(sestra) references sestra(sifra);
+alter table sestra_svekar add foreign key(svekar) references svekar(sifra);
+
+alter table mladic add foreign key(muskarac) references muskarac(sifra);
+
+alter table muskarac add foreign key(zena) references zena(sifra);
+
+alter table zena add foreign key(sestra) references sestra(sifra);
+
+alter table cura add foreign key(punac) references punac(sifra);
