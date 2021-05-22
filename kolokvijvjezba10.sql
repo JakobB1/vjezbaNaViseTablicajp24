@@ -65,3 +65,20 @@ lipa decimal(15,9),
 eura decimal(15,10) not null,
 stilfrizura varchar(37)
 );
+
+create table punac_neprijatelj(
+sifra int not null primary key auto_increment,
+punac int not null,
+neprijatelj int not null
+);
+
+alter table sestra add foreign key(zarucnica) references zarucnica(sifra);
+
+alter table zena add foreign key(mladic) references mladic(sifra);
+
+alter table mladic add foreign key(svekrva) references svekrva(sifra);
+
+alter table svekrva add foreign key(punac) references punac(sifra);
+
+alter table punac_neprijatelj add foreign key(punac) references punac(sifra);
+alter table punac_neprijatelj add foreign key(neprijatelj) references neprijatelj(sifra);
