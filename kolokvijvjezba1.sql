@@ -142,3 +142,6 @@ delete from mladic where kuna > 15.78;
 
 #4 Izlistati kratkamajica iz tablice zena
 select kratkamajica from zena where hlace like '%ana%';
+
+
+#5
