@@ -127,3 +127,10 @@ select * from sestra_svekar;
 
 insert into sestra_svekar(sestra,svekar) 
 values(1,1),(2,2),(3,3);
+
+
+select * from cura;
+
+insert into cura(novcica,gustoca,ogrlica)
+values(10,10,1);
+update cura set gustoca = 15.77;
