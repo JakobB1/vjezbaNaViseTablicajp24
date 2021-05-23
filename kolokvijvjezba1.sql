@@ -2,6 +2,7 @@ drop database if exists kolokvijvjezba1;
 create database kolokvijvjezba1;
 use kolokvijvjezba1;
 
+#0 Kreiranje tablice i veze
 create table sestra(
   sifra int not null primary key auto_increment,
   introvertno bit,
@@ -77,20 +78,16 @@ create table cura(
 );
 
 
-
 alter table sestra_svekar add foreign key(sestra) references sestra(sifra);
 alter table sestra_svekar add foreign key(svekar) references svekar(sifra);
 
 alter table mladic add foreign key(muskarac) references muskarac(sifra);
-
 alter table muskarac add foreign key(zena) references zena(sifra);
-
 alter table zena add foreign key(sestra) references sestra(sifra);
-
 alter table cura add foreign key(punac) references punac(sifra);
 
 
-
+#1 Unjeti po 3 retka (muskarac,zena i zena_svekar)
 select * from sestra;
 
 insert into sestra(haljina,hlace,narukvica)
@@ -113,7 +110,7 @@ insert into muskarac(bojaociju,maraka,zena)
 values ('Crna',10,1),
        ('Plava',20,2),
        ('Zelena',30,3);
-      
+     
       
 select * from svekar;
 
@@ -129,8 +126,19 @@ insert into sestra_svekar(sestra,svekar)
 values(1,1),(2,2),(3,3);
 
 
+#2 U tablici cura postaviti gustocu
 select * from cura;
-
 insert into cura(novcica,gustoca,ogrlica)
 values(10,10,1);
 update cura set gustoca = 15.77;
+
+
+#3 U tablici mladic obrisati kune vece od 
+select * from mladic;
+insert into mladic(suknja, kuna ,ekstroventno ,dukserica)
+values (1,10,false,'Plava');
+delete from mladic where kuna > 15.78;
+
+
+#4 Izlistati kratkamajica iz tablice zena
+select kratkamajica from zena where hlace like '%ana%';
