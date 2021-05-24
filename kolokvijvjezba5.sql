@@ -120,3 +120,6 @@ insert into svekar_cura(svekar,cura)
 values (1,3),
        (2,2),
        (3,1);
+  
+      
+#2 U tablici mladic postavite svim zapisima kolonu haljina na vrijednost Osijek.  
