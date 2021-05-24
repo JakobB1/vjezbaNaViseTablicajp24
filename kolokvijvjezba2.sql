@@ -131,3 +131,13 @@ values ('2020-12-19',1,1),
        ('2019-12-19',1,3);
        
 update prijatelj set treciputa='2020-04-30';
+
+
+#3 U tablici brat obrišite sve zapise čija je vrijednost kolone ogrlica različito od 14.
+select * from brat;
+insert into brat (ogrlica,asocijalno,neprijatelj)
+values  (14,0,1),
+        (8,1,2),
+        (4,1,3);
+        
+delete from brat where ogrlica != 14;   
