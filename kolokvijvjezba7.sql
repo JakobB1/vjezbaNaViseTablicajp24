@@ -82,5 +82,44 @@ alter table sestra add foreign key(prijateljica) references prijateljica(sifra);
 alter table punica add foreign key(cura) references cura(sifra);
 
 
-#1 Unjeti po 3 retka (t,t i t)
-select * from
+#1 Unjeti po 3 retka (prijateljica, ostavljen i zarucnik_mladic)
+select * from zarucnik;
+
+insert into zarucnik(asocijalno,narukvica,novcica)
+values  (1,6,20.99),
+        (0,3,40.99),
+        (1,9,50.99);
+        
+       
+select * from ostavljen;
+
+insert into ostavljen(introvertno,kratkamajica,prstena)
+values  (0,'Plava kratka',7),
+        (1,'Zelena kratka',3),
+        (1,'Crna kratka',11);
+        
+       
+select * from prijateljica;
+
+insert into prijateljica(gustoca,ostavljen)
+values  (11.33,1),
+        (22.44,2),
+        (33.55,3);
+        
+       
+select * from mladic;
+
+insert into mladic(lipa,narukvica,drugiputa)
+values  (10.11,4,'2013-11-05'),
+        (32.53,8,'2013-11-05'),
+        (13.74,2,'2013-11-05');
+        
+       
+select * from zarucnik_mladic;
+
+insert into zarucnik_mladic(zarucnik,mladic)
+values  (1,3),
+        (2,2),
+        (3,1);
+       
+
