@@ -117,3 +117,17 @@ select * from decko_zarucnica;
 
 insert into decko_zarucnica(decko,zarucnica)
 values(3,1),(2,2),(3,3);
+
+
+#2 U tablici prijatelj postavite svim zapisima kolonu treciputa na vrijednost 30. travnja 2020.
+select * from svekar;
+insert into svekar(ogrlica,asocijalno)
+values  (3,1),(3,1),(3,0);
+
+select * from prijatelj;
+insert into prijatelj(treciputa,ekstroventno,svekar)
+values ('2020-12-19',1,1),
+       ('2018-12-19',1,2),
+       ('2019-12-19',1,3);
+       
+update prijatelj set treciputa='2020-04-30';
