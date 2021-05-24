@@ -83,5 +83,40 @@ alter table punac_neprijatelj add foreign key(punac) references punac(sifra);
 alter table punac_neprijatelj add foreign key(neprijatelj) references neprijatelj(sifra);
 
 
-#1 Unjeti po 3 retka (t,t i t)
-select * from
+#1 Unjeti po 3 retka (mladic, svekrva i punac_neprijatelj)
+select * from punac;
+
+insert into punac(eura)
+values  (10.99),
+        (62.99),
+        (13.99);
+
+       
+select * from svekrva;
+
+insert into svekrva(introvertno)
+values  (1),(0),(1);
+
+
+select * from mladic;
+
+insert into mladic(hlace,stilfrizura,maraka,svekrva)
+values  ('Crne hlace','Kratka',13.52,1),
+        ('Plave hlace','Duga',32.52,1),
+        ('Zelene hlace','Celavo',113.52,1);
+        
+       
+select * from neprijatelj;
+
+insert into neprijatelj(gustoca,dukserica,stilfrizura)
+values  (15.25,'Crna','Duga'),
+        (25.25,'Dugih rukava','Duga'),
+        (35.65,'Kratkih rukava','Duga');
+        
+       
+select * from punac_neprijatelj;
+
+insert into punac_neprijatelj (punac,neprijatelj)
+values  (1,3),
+        (2,1),
+        (3,2);
