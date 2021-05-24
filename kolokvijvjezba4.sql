@@ -79,5 +79,41 @@ alter table zena_mladic add foreign key(zena) references zena(sifra);
 alter table zena_mladic add foreign key(mladic) references mladic(sifra);
 
 
-#1 Unjeti po 3 retka (t,t i t)
-select * from
+#1 Unjeti po 3 retka (becar, snasa i zena_mladic)
+select * from zena;
+
+insert into zena(suknja,prstena)
+values  ('Zelena suknja',1),
+        ('Plava suknja',2),
+        ('Crna suknja',3);
+        
+       
+select * from snasa;
+insert into snasa(haljina,zena)
+values  ('Crna haljina',1),
+        ('Plava haljina',2),
+        ('Zelena haljina',3);
+        
+       
+select * from becar;
+
+insert into becar(kratkamajica,bojaociju,snasa)    
+values  ('Crna kratka','Crna',1),
+        ('Plava kratka','Zelena',2),
+        ('Zelena kratka','Plava',3);
+        
+       
+select * from mladic;
+
+insert into mladic(vesta)
+values  ('Crna vesta'),
+        ('Plava vesta'),
+        ('Zelena vesta');
+        
+       
+select * from zena_mladic;
+
+insert into zena_mladic(zena,mladic)
+values (1,3),
+       (2,2),
+       (3,1);
