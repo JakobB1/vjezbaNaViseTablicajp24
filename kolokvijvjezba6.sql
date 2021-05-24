@@ -120,3 +120,19 @@ insert into prijatelj_ostavljena(prijatelj,ostavljena)
 values  (1,3),
         (2,2),
         (3,1);
+        
+       
+#2 U tablici svekrva postavite svim zapisima kolonu suknja na vrijednost Osijek. 
+select * from punac;
+insert into punac(ekstrovertno,suknja,majica,prviputa)
+values  (0,'Kratka','Dugih rukava','2024-04-04'),
+        (1,'Duga','Kratkih rukava','2023-12-11'),
+        (1,'Plava','Crna','2021-11-01');
+        
+select * from svekrva;
+insert into svekrva(hlace,suknja,ogrlica,treciputa,dukserica,narukvica,punac)
+values  ('Plave','Crna',3,'2019-12-31','Duga',3,1),
+        ('Crne','Plava',5,'2012-10-24','Crna',3,1),
+        ('Zelene','Zuta',1,'2013-11-01','Plava',3,1);
+        
+update svekrva set suknja='Osijek';       
