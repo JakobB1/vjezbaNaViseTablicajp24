@@ -160,3 +160,6 @@ where d.hlace like 'a%' and c.haljina like '%ba%';
 
 # 6 Prikažite kolone haljina i maraka iz tablice sestra 
 # čiji se primarni ključ ne nalaze u tablici sestra_svekar.
+select a.haljina, a.maraka 
+from sestra a inner join sestra_svekar b on a.sifra = b.sestra 
+where b.sestra is null;
