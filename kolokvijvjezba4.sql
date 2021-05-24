@@ -117,3 +117,8 @@ insert into zena_mladic(zena,mladic)
 values (1,3),
        (2,2),
        (3,1);
+       
+      
+#2 U tablici punac postavite svim zapisima kolonu majica na vrijednost Osijek.
+select * from punac;
+update punac set majica = 'Osijek';
