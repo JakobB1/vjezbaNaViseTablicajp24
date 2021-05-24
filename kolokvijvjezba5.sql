@@ -143,4 +143,4 @@ values  (21,1),
         (17,2),
         (14,3);
         
-delete from ostavljena where ogrlica !=17;     
+delete from ostavljena where ogrlica =17;     
