@@ -143,5 +143,18 @@ values  (14,0,1),
 delete from brat where ogrlica != 14;
 
 
-#5 
-
+#5 Prikažite novcica iz tablice zarucnica, 
+# neprijatelj iz tablice brat 
+# te haljina iz tablice neprijatelj 
+# uz uvjet da su vrijednosti kolone drugiputa iz tablice cura poznate 
+# te da su vrijednosti kolone vesta iz tablice decko sadrže niz znakova ba. 
+# Podatke posložite po haljina iz tablice neprijatelj silazno.
+select a.novcica , f.neprijatelj , e.haljina
+from zarucnica a 
+inner join decko_zarucnica b on a.sifra = b.zarucnica 
+inner join decko c           on b.decko = c.sifra 
+inner join cura d            on c.sifra = d.decko
+inner join neprijatelj e     on d.sifra = e.cura
+inner join brat f            on e.sifra = f.neprijatelj
+where c.vesta like '%ba%' and d.drugiputa is not null 
+order by e.haljina desc;
