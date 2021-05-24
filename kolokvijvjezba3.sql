@@ -129,8 +129,24 @@ values (2),(7),(6);
 
 select* from svekar;
 insert into svekar(novcica,suknja,narukvica,cura)
-values (22.22,'Plava',7,1),
-       (33.11,'Zelena',4,2),
-       (44.55,'Crna',3,3);
+values  (22.22,'Plava',7,1),
+        (33.11,'Zelena',4,2),
+        (44.55,'Crna',3,3);
        
-update svekar set suknja = 'Osijek';      
+update svekar set suknja = 'Osijek';
+
+
+#3 U tablici punica obrišite sve zapise čija je vrijednost kolone kratkamajica jednako AB.
+select * from snasa;
+insert into snasa(kuna,eura,ostavljena)
+values  (23.23,33.33,1),
+        (23.23,33.33,2),
+        (23.23,33.33,3);
+        
+select * from punica;       
+insert into punica(kuna,vesta,snasa)
+values  (33.11,'Zelena',1),
+        (22.21,'Crna',2),
+        (21.51,'Plava',3);
+        
+delete from punica where kratkamajica='AB';      
