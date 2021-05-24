@@ -81,5 +81,42 @@ alter table prijatelj_ostavljena add foreign key(prijatelj) references prijatelj
 alter table prijatelj_ostavljena add foreign key(ostavljena) references ostavljena(sifra);
 
 
-#1 Unjeti po 3 retka (t,t i t)
-select * from
+#1 Unjeti po 3 retka (zena, brat i prijatelj_ostavljena)
+select * from prijatelj;
+
+insert into prijatelj(prstena,stilfrizura)
+values  (3,'Kratka'),
+        (5,'Duga'),
+        (7,'Celavo');
+        
+       
+select * from brat;
+
+insert into brat(nausnica,treciputa,narukvica)
+values  (8,'2021-11-21',1),
+        (5,'2017-12-11',5),
+        (8,'2013-09-23',9);
+        
+       
+select * from zena;
+
+insert into zena(novcica,narukvica,dukserica,brat)
+values  (10.99,3,'Plava',1),
+        (20.99,8,'Zelena',2),
+        (30.99,1,'Crna',3);
+        
+       
+select * from ostavljena;
+
+insert into ostavljena(prviputa,kratkamajica)
+values  ('2020-12-03','Plava kratka'),
+        ('2019-04-23','Zelena duga'),
+        ('2018-11-13','Crna kratka');
+        
+       
+select * from prijatelj_ostavljena;
+
+insert into prijatelj_ostavljena(prijatelj,ostavljena)
+values  (1,3),
+        (2,2),
+        (3,1);
