@@ -81,5 +81,42 @@ alter table svekar_cura add foreign key(svekar) references svekar(sifra);
 alter table svekar_cura add foreign key(cura) references cura(sifra);
 
 
-#1 Unjeti po 3 retka (t,t i t)
-select * from
+#1 Unjeti po 3 retka (punica, punac i svekar_cura)
+select * from svekar;
+
+insert into svekar(carape,eura)
+values  ('Crne',10.99),
+        ('Zelene',20.99),
+        ('Plave',30.99);
+        
+       
+select * from punac;
+
+insert into punac(prviputa,svekar)
+values ('2012-01-25',1),
+       ('2013-02-11',2),
+       ('2014-07-05',3);
+       
+      
+select * from punica;      
+
+insert into punica(hlace,nausnica,vesta,modelnaocala,treciputa,punac)
+values  ('Plave',4,'Crna','Suncane','2012-12-25',1),
+        ('Zelene',7,'Plava','Dioptrijske','2012-12-25',2),
+        ('Crne',9,'Zelena','Ray-Ban','2012-12-25',3);
+        
+ 
+select * from cura;
+
+insert into cura(carape,marka,vesta)
+values  ('Crne',20.99,'Plava'),
+        ('Plave',30.99,'Crna'),
+        ('Zelene',40.99,'Zuta');
+        
+       
+select * from svekar_cura;
+
+insert into svekar_cura(svekar,cura)
+values (1,3),
+       (2,2),
+       (3,1);
