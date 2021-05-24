@@ -133,4 +133,14 @@ values  ('Crna','Plava',1),
         ('Crvena','Zelena',2),
         ('Plava','Zelena',3);
         
-update mladic set haljina='Osijek';       
+update mladic set haljina='Osijek';
+
+
+#3 U tablici ostavljena obrišite sve zapise čija je vrijednost kolone ogrlica jednako 17.
+select * from ostavljena;
+insert into ostavljena(ogrlica,punica)
+values  (21,1),
+        (17,2),
+        (14,3);
+        
+delete from ostavljena where ogrlica !=17;     
