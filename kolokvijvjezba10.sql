@@ -146,3 +146,6 @@ values  ('Zelena',33.35,1),
         ('Crna',222.55,3);
         
 delete from zena where maraka !=14.81;
+
+
+#5 

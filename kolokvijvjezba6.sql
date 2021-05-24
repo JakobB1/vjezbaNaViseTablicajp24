@@ -141,3 +141,6 @@ update svekrva set suknja='Osijek';
 #3 U tablici decko obrišite sve zapise čija je vrijednost kolone modelnaocala manje od AB.
 select * from decko;
 delete from decko where modelnaocala<'AB';
+
+
+#5 

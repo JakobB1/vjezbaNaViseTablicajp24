@@ -135,3 +135,6 @@ update cura set indiferentno=false;
 #3 U tablici brat obrišite sve zapise čija je vrijednost kolone novcica različito od 12,75.
 select * from brat;
 delete from brat where novcica!='12.75';
+
+
+#5 

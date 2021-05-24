@@ -145,3 +145,6 @@ values  ('Plava','Crne','Duga',22.22,1),
         ('Crna','Duge','Kratka',222.12,2);
        
 delete from sestra where  hlace<'AB';
+
+
+#5 

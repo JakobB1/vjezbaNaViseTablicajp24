@@ -140,3 +140,5 @@ update snasa set drugiputa = '2020.04.24.';
 #3 U tablici zarucnik obrišite sve zapise čija je vrijednost kolone haljina jednako AB.
 delete from zarucnik where haljina='AB';
 
+
+#5 

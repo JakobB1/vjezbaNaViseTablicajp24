@@ -127,14 +127,14 @@ insert into sestra_svekar(sestra,svekar)
 values(1,1),(2,2),(3,3);
 
 
-#2 U tablici cura postaviti gustocu
+#2 U tablici cura postavite svim zapisima kolonu gustoca na vrijednost 15,77.
 select * from cura;
 insert into cura(novcica,gustoca,ogrlica)
 values(10,10,1);
 update cura set gustoca = 15.77;
 
 
-#3 U tablici mladic obrisati kune vece od 
+#3 U tablici mladic obrišite sve zapise čija je vrijednost kolone kuna veće od 15,78.
 select * from mladic;
 insert into mladic(suknja, kuna ,ekstroventno ,dukserica)
 values (1,10,false,'Plava');
@@ -145,4 +145,14 @@ delete from mladic where kuna > 15.78;
 select kratkamajica from zena where hlace like '%ana%';
 
 
-#5 Tablice i podaci
+#5 Prikažite dukserica iz tablice svekar, asocijalno iz tablice mladic 
+# te hlace iz tablice muskarac uz uvjet da su vrijednosti kolone hlace iz tablice zena počinju slovom a 
+# te da su vrijednosti kolone haljina iz tablice sestra sadrže niz znakova ba. 
+# Podatke posložite po hlace iz tablice muskarac silazno.
+
+
+# 6 Prikažite kolone haljina i maraka iz tablice sestra 
+# čiji se primarni ključ ne nalaze u tablici sestra_svekar.
+select a.haljina, a.maraka 
+from sestra a left join sestra_svekar b on a.sifra = b.sestra 
+where b.sestra is null;

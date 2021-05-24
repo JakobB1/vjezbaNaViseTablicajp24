@@ -140,4 +140,8 @@ values  (14,0,1),
         (8,1,2),
         (4,1,3);
         
-delete from brat where ogrlica != 14;   
+delete from brat where ogrlica != 14;
+
+
+#5 
+

@@ -132,3 +132,6 @@ values  (21,23231321,'Plava',1),
         (23,11231223,'Zelena',3);
         
 delete from prijatelj where prstena > 17;
+
+
+#5 

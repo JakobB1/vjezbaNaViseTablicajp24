@@ -149,4 +149,7 @@ values  (33.11,'Zelena',1),
         (22.21,'Crna',2),
         (21.51,'Plava',3);
         
-delete from punica where kratkamajica='AB';      
+delete from punica where kratkamajica='AB';
+
+
+#5 
