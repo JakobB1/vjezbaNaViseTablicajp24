@@ -135,4 +135,9 @@ values  ('Plave','Crna',3,'2019-12-31','Duga',3,1),
         ('Crne','Plava',5,'2012-10-24','Crna',3,1),
         ('Zelene','Zuta',1,'2013-11-01','Plava',3,1);
         
-update svekrva set suknja='Osijek';       
+update svekrva set suknja='Osijek';
+
+
+#3 U tablici decko obrišite sve zapise čija je vrijednost kolone modelnaocala manje od AB.
+select * from decko;
+delete from decko where modelnaocala<'AB';
