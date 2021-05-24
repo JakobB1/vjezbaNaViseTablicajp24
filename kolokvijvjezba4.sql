@@ -122,3 +122,13 @@ values (1,3),
 #2 U tablici punac postavite svim zapisima kolonu majica na vrijednost Osijek.
 select * from punac;
 update punac set majica = 'Osijek';
+
+
+#3 U tablici prijatelj obrišite sve zapise čija je vrijednost kolone prstena veće od 17.
+select * from prijatelj;
+insert into prijatelj(prstena,jmbag ,suknja,becar)
+values  (21,23231321,'Plava',1),
+        (15,11231223,'Crna',2),
+        (23,11231223,'Zelena',3);
+        
+delete from prijatelj where prstena > 17;
