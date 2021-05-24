@@ -135,3 +135,8 @@ values  ('2013-11-23','Plava',1),
         ('2015-12-02','Zelena',3);
         
 update snasa set drugiputa = '2020.04.24.';
+
+
+#3 U tablici zarucnik obrišite sve zapise čija je vrijednost kolone haljina jednako AB.
+delete from zarucnik where haljina='AB';
+
