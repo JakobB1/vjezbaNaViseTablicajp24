@@ -135,4 +135,14 @@ values  ('Roza','Plava','2021-03-23',1),
         ('Plava','Zelena','2021-01-01',2),
         ('Crna','Zuta','2021-06-30',3);
 
-update sestra set bojaociju='Osijek';       
+update sestra set bojaociju='Osijek';
+
+
+#3 U tablici zena obrišite sve zapise čija je vrijednost kolone maraka različito od 14,81.
+select * from zena;
+insert into zena(bojaociju,maraka,mladic)
+values  ('Zelena',33.35,1),
+        ('Plava',14.81,2),
+        ('Crna',222.55,3);
+        
+delete from zena where maraka !=14.81;
