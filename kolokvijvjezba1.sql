@@ -149,10 +149,14 @@ select kratkamajica from zena where hlace like '%ana%';
 # te hlace iz tablice muskarac uz uvjet da su vrijednosti kolone hlace iz tablice zena počinju slovom a 
 # te da su vrijednosti kolone haljina iz tablice sestra sadrže niz znakova ba. 
 # Podatke posložite po hlace iz tablice muskarac silazno.
+select a.dukserica, f.asocijalno, e.hlace 
+from svekar a inner join sestra_svekar b on a.sifra = b.svekar 
+inner join sestra c on b.sestra = c.sifra 
+inner join zena d on c.sifra = d.sestra 
+inner join muskarac e on d.sifra = e.zena 
+inner join mladic f on e.sifra = f.muskarac 
+where d.hlace like 'a%' and c.haljina like '%ba%';
 
 
 # 6 Prikažite kolone haljina i maraka iz tablice sestra 
 # čiji se primarni ključ ne nalaze u tablici sestra_svekar.
-select a.haljina, a.maraka 
-from sestra a left join sestra_svekar b on a.sifra = b.sestra 
-where b.sestra is null;
