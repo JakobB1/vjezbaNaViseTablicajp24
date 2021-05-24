@@ -122,4 +122,15 @@ values (1,3),
        (3,1);
   
       
-#2 U tablici mladic postavite svim zapisima kolonu haljina na vrijednost Osijek.  
+#2 U tablici mladic postavite svim zapisima kolonu haljina na vrijednost Osijek.
+select * from zarucnik;
+insert into zarucnik (indiferentno)
+values (1),(1),(0);
+
+select * from mladic;
+insert into mladic(kratkamajica,haljina,zarucnik)
+values  ('Crna','Plava',1),
+        ('Crvena','Zelena',2),
+        ('Plava','Zelena',3);
+        
+update mladic set haljina='Osijek';       
