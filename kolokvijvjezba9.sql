@@ -82,5 +82,40 @@ alter table zarucnik add foreign key(brat) references brat(sifra);
 alter table snasa add foreign key(ostavljena) references ostavljena(sifra);
 
 
-#1 Unjeti po 3 retka (t,t i t)
-select * from
+#1 Unjeti po 3 retka (brat, cura i punac_prijateljica)
+select * from punac;
+
+insert into punac(narukvica)
+values  (6),(3),(8);
+
+
+select * from cura;
+
+insert into cura(vesta,suknja,punac)
+values  ('Plava vesta','Crna suknja',1),
+         ('Crna vesta','Zelena suknja',2),
+         ('Zelena vesta','Crvena suknja',3);
+         
+        
+select * from brat;
+
+insert into brat(novcica,vesta,cura)
+values  (99.99,'Plava vesta',1),
+        (33.99,'Zelena vesta',2),
+        (54.99,'Crna vesta',3);
+        
+       
+select * from prijateljica;
+
+insert into prijateljica(kuna)
+values (12.12),
+       (123.12),
+       (54.15);
+
+
+select * from punac_prijateljica;
+
+insert into punac_prijateljica (punac,prijateljica)
+values  (1,3),
+        (2,2),
+        (3,1);
