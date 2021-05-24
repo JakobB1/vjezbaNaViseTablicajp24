@@ -79,5 +79,40 @@ alter table muskarac_decko add foreign key(decko) references decko(sifra);
 alter table muskarac_decko add foreign key(muskarac) references muskarac(sifra);
 
 
-#1 Unjeti po 3 retka (t,t i t)
-select * from
+#1 Unjeti po 3 retka (neprijatelj, becar i muskarac_decko)
+select * from muskarac; 
+
+insert into muskarac (drugiputa)
+values ('2017-11-19'),
+       ('2019-11-19'),
+       ('2011-11-19');
+
+      
+select * from becar;
+
+insert into becar(muskarac)
+values (1),(2),(3);
+
+
+select * from neprijatelj;
+
+insert into neprijatelj(ogrlica,becar)
+values  (2,1),
+        (7,2),
+        (9,3);
+        
+       
+select * from decko;
+
+insert into decko(treciputa,ogrlica,ekstrovertno)
+values  ('2013-03-12',6,0),
+        ('2015-12-21',5,1),
+        ('2018-11-30',2,1);
+        
+       
+select * from muskarac_decko;
+
+insert into muskarac_decko(muskarac,decko)
+values  (1,3),
+        (2,2),
+        (3,1);
