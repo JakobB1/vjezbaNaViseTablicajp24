@@ -116,3 +116,17 @@ insert into muskarac_decko(muskarac,decko)
 values  (1,3),
         (2,2),
         (3,1);
+        
+       
+#2 U tablici cura postavite svim zapisima kolonu indiferentno na vrijednost false.
+select * from prijateljica;  
+insert into prijateljica(nausnica,introvertno)
+values  (5,0),(3,0),(7,1);
+
+select * from cura;
+insert into cura(nausnica,ogrlica,prijateljica)
+values  (3,5,1),
+        (1,4,2),
+        (6,1,3);
+        
+update cura set indiferentno=false;
