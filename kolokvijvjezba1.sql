@@ -2,7 +2,8 @@ drop database if exists kolokvijvjezba1;
 create database kolokvijvjezba1;
 use kolokvijvjezba1;
 
-#0 Kreiranje tablice i veze
+
+#0 Kreiranje tablica i veza
 create table sestra(
   sifra int not null primary key auto_increment,
   introvertno bit,
@@ -144,4 +145,4 @@ delete from mladic where kuna > 15.78;
 select kratkamajica from zena where hlace like '%ana%';
 
 
-#5
+#5 Tablice i podaci
