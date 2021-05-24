@@ -119,4 +119,18 @@ select * from prijatelj_brat;
 insert into prijatelj_brat(prijatelj,brat)
 values  (1,3), 
         (2,2), 
-        (3,1);      
+        (3,1);
+        
+       
+#2 U tablici svekar postavite svim zapisima kolonu suknja na vrijednost Osijek.    
+select * from cura;
+insert into cura(ogrlica)
+values (2),(7),(6);
+
+select* from svekar;
+insert into svekar(novcica,suknja,narukvica,cura)
+values (22.22,'Plava',7,1),
+       (33.11,'Zelena',4,2),
+       (44.55,'Crna',3,3);
+       
+update svekar set suknja = 'Osijek';      
