@@ -119,3 +119,19 @@ insert into punac_prijateljica (punac,prijateljica)
 values  (1,3),
         (2,2),
         (3,1);
+        
+       
+#2 U tablici snasa postavite svim zapisima kolonu drugiputa na vrijednost 24. travnja 2020.
+select * from ostavljena;
+insert into ostavljena(modelnaocala,eura,lipa,treciputa,drugiputa)
+values  ('Suncane',232.33,141.22,'2021-04-04','2012-11-02'),
+        ('Dioptrijske',212.33,131.22,'2019-04-04','2012-11-02'),
+        ('RayBan',33.33,222.22,'2012-04-04','2012-11-02');
+        
+select * from snasa;
+insert into snasa(drugiputa,haljina,ostavljena)
+values  ('2013-11-23','Plava',1),
+        ('2014-09-11','Crna',2),
+        ('2015-12-02','Zelena',3);
+        
+update snasa set drugiputa = '2020.04.24.';
