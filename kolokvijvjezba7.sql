@@ -135,3 +135,13 @@ values  (55.44,1),
         (23.55,3);
         
 update punica set eura=15.77;
+
+
+#3 U tablici sestra obrišite sve zapise čija je vrijednost kolone hlace manje od AB.
+select * from sestra;
+insert into sestra(bojakose,hlace,stilfrizura,maraka,prijateljica)
+values  ('Plava','Crne','Duga',22.22,1),
+        ('Zelena','Plave','Kratka',33.22,2),
+        ('Crna','Duge','Kratka',222.12,2);
+       
+delete from sestra where  hlace<'AB';
