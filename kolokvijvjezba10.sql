@@ -120,3 +120,19 @@ insert into punac_neprijatelj (punac,neprijatelj)
 values  (1,3),
         (2,1),
         (3,2);
+        
+       
+#2 U tablici sestra postavite svim zapisima kolonu bojaociju na vrijednost Osijek.
+select * from zarucnica;
+insert into zarucnica(suknja)
+values  ('Plava'),
+        ('Zelena'),
+        ('Crna');
+        
+select * from sestra;
+insert into sestra(suknja,dukserica,prviputa,zarucnica)
+values  ('Roza','Plava','2021-03-23',1),
+        ('Plava','Zelena','2021-01-01',2),
+        ('Crna','Zuta','2021-06-30',3);
+
+update sestra set bojaociju='Osijek';       
