@@ -146,4 +146,25 @@ values  (21,1),
 delete from ostavljena where ogrlica =17;  
 
 
-#5 
+#5 Prikažite asocijalno iz tablice cura, 
+#  stilfrizura iz tablice ostavljena 
+#  te nausnica iz tablice punica 
+#  uz uvjet da su vrijednosti kolone prviputa iz tablice punac poznate 
+#  te da su vrijednosti kolone majica iz tablice svekar sadrže niz znakova ba. 
+#  Podatke posložite po nausnica iz tablice punica silazno.
+select a.asocijalno , f.stilfrizura , e.nausnica 
+from cura a
+inner join svekar_cura     b on a.sifra      = b.cura
+inner join svekar          c on b.svekar     = c.sifra
+inner join punac           d on c.sifra      = d.svekar
+inner join punica          e on d.sifra      = e.punac
+inner join ostavljena      f on e. sifra     = f.punica
+where d.prviputa is not null and c.majica like '%ba%'
+order by e.nausnica desc;
+
+
+#6 Prikažite kolone majica i carape iz tablice svekar 
+#  čiji se primarni ključ ne nalaze u tablici svekar_cura.
+select a.majica , a.carape 
+from svekar a left join svekar_cura b on a.sifra = b.svekar
+where b.svekar is null; 
