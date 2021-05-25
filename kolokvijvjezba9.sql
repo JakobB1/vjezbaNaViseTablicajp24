@@ -141,4 +141,25 @@ update snasa set drugiputa = '2020.04.24.';
 delete from zarucnik where haljina='AB';
 
 
-#5 
+#5 Prikažite kuna iz tablice prijateljica, 
+#  nausnica iz tablice zarucnik 
+#  te ekstroventno iz tablice brat 
+#  uz uvjet da su vrijednosti kolone ekstroventno iz tablice cura poznate 
+#  te da su vrijednosti kolone modelnaocala iz tablice punac sadrže niz znakova ba. 
+#  Podatke posložite po ekstroventno iz tablice brat silazno.
+select a.kuna , f.nausnica , e.ekstroventno 
+from prijateljica a
+inner join punac_prijateljica   b on a.sifra      = b.prijateljica 
+inner join punac                c on b.punac      = c.sifra
+inner join cura                 d on c.sifra      = d.punac
+inner join brat                 e on d.sifra      = e.cura
+inner join zarucnik             f on e.sifra      = f.brat
+where d.ekstroventno is not null and c.modelnaocala like '%ba%'
+order by e.ekstroventno;
+
+
+#6 Prikažite kolone modelnaocala i kuna iz tablice punac 
+#  čiji se primarni ključ ne nalaze u tablici punac_prijateljica.
+select a.modelnaocala , a.kuna 
+from punac a left join punac_prijateljica b on b.punac = a.sifra 
+where b.punac is null;
