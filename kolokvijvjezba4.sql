@@ -134,4 +134,24 @@ values  (21,23231321,'Plava',1),
 delete from prijatelj where prstena > 17;
 
 
-#5 
+#5 Prikažite nausnica iz tablice mladic, 
+#  jmbag iz tablice prijatelj 
+#  te kratkamajica iz tablice becar 
+#  uz uvjet da su vrijednosti kolone treciputa iz tablice snasa poznate 
+#  te da su vrijednosti kolone lipa iz tablice zena različite od 29. 
+#  Podatke posložite po kratkamajica iz tablice becar silazno
+select a.nausnica , f.jmbag, e.kratkamajica 
+from mladic a
+inner join zena_mladic     b on a.sifra     = b.mladic
+inner join zena            c on b.zena      = c.sifra
+inner join snasa           d on c.sifra     = d.zena
+inner join becar           e on d.sifra     = e.snasa
+inner join prijatelj       f on e.sifra     = f.becar
+where d.treciputa is not null and c.lipa != 29.00
+order by e.kratkamajica desc;
+
+#6 Prikažite kolone lipa i prstena iz tablice zena 
+#  čiji se primarni ključ ne nalaze u tablici zena_mladic.
+select a.lipa, a.prstena 
+from zena a left join zena_mladic b on a.sifra = b.zena
+where b.zena is null;
