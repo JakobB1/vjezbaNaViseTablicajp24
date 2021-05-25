@@ -143,4 +143,25 @@ select * from decko;
 delete from decko where modelnaocala<'AB';
 
 
-#5 
+#5 Prikažite drugiputa iz tablice ostavljena, 
+#  zena iz tablice decko 
+#  te narukvica iz tablice zena 
+#  uz uvjet da su vrijednosti kolone treciputa iz tablice brat poznate 
+#  te da su vrijednosti kolone prstena iz tablice prijatelj jednake broju 219. 
+#  Podatke posložite po narukvica iz tablice zena silazno.
+select a.drugiputa , f.zena , e.narukvica 
+from ostavljena a
+inner join prijatelj_ostavljena b on a.sifra      = b.ostavljena 
+inner join prijatelj            c on b.prijatelj  = c.sifra
+inner join brat                 d on c.sifra      = d.prijatelj 
+inner join zena                 e on d.sifra      = e.brat
+inner join decko                f on e.sifra      = f.zena
+where d.treciputa is not null and c.prstena = 219
+order by e.narukvica desc;
+
+
+#6 Prikažite kolone prstena i introvertno iz tablice prijatelj 
+#  čiji se primarni ključ ne nalaze u tablici prijatelj_ostavljena.
+select a.prstena , a.introvertno
+from prijatelj a left join prijatelj_ostavljena b on a.sifra = b.prijatelj 
+where b.prijatelj is null;
