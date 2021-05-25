@@ -158,3 +158,10 @@ inner join neprijatelj e     on d.sifra = e.cura
 inner join brat f            on e.sifra = f.neprijatelj
 where c.vesta like '%ba%' and d.drugiputa is not null 
 order by e.haljina desc;
+
+
+#6 Prikažite kolone vesta i asocijalno iz tablice decko 
+#  čiji se primarni ključ ne nalaze u tablici decko_zarucnica.
+select a.vesta , a.asocijalno 
+from decko a left join decko_zarucnica b on a.sifra = b.decko 
+where b.decko is null;
