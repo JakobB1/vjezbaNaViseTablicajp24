@@ -156,7 +156,8 @@ inner join sestra         c on b.sestra = c.sifra
 inner join zena           d on c.sifra = d.sestra 
 inner join muskarac       e on d.sifra = e.zena 
 inner join mladic         f on e.sifra = f.muskarac 
-where d.hlace like 'a%' and c.haljina like '%ba%';
+where d.hlace like 'a%' and c.haljina like '%ba%'
+order by e.hlace desc;
 
 
 # 6 Prikažite kolone haljina i maraka iz tablice sestra 
