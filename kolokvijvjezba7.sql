@@ -147,4 +147,25 @@ values  ('Plava','Crne','Duga',22.22,1),
 delete from sestra where  hlace<'AB';
 
 
-#5 
+#5 Prikažite narukvica iz tablice mladic, 
+#  stilfrizura iz tablice sestra 
+#  te gustoca iz tablice prijateljica 
+#  uz uvjet da su vrijednosti kolone introvertno iz tablice ostavljen poznate 
+#  te da su vrijednosti kolone asocijalno iz tablice zarucnik poznate. 
+#  Podatke posložite po gustoca iz tablice prijateljica silazno.
+select a.narukvica , f.stilfrizura , e.gustoca 
+from mladic a
+inner join zarucnik_mladic b on a.sifra      = b.mladic 
+inner join zarucnik        c on b.zarucnik   = c.sifra
+inner join ostavljen       d on c.sifra      = d.zarucnik 
+inner join prijateljica    e on d.sifra      = e.ostavljen
+inner join sestra          f on e.sifra      = f.prijateljica 
+where d.introvertno is not null and c.asocijalno is not null
+order by e.gustoca desc;
+
+
+#6 Prikažite kolone asocijalno i modelnaocala iz tablice zarucnik 
+#  čiji se primarni ključ ne nalaze u tablici zarucnik_mladic.
+select a.asocijalno , a.modelnaocala 
+from zarucnik a left join zarucnik_mladic b on b.zarucnik = a.sifra 
+where b.zarucnik is null;
