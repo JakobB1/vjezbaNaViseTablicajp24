@@ -152,4 +152,24 @@ values  (33.11,'Zelena',1),
 delete from punica where kratkamajica='AB';
 
 
-#5 
+#5 Prikažite ekstroventno iz tablice brat, 
+#  vesta iz tablice punica 
+#  te kuna iz tablice snasa uz uvjet da su vrijednosti kolone lipa iz tablice ostavljena različito od 91 
+#  te da su vrijednosti kolone haljina iz tablice prijatelj sadrže niz znakova ba. 
+#  Podatke posložite po kuna iz tablice snasa silazno.
+select a.ekstrovertno, f.vesta , e.kuna 
+from brat a 
+inner join prijatelj_brat b on a.sifra     = b.brat
+inner join prijatelj      c on b.prijatelj = c.sifra
+inner join ostavljena     d on c.sifra     = d.prijatelj 
+inner join snasa          e on d.sifra     = e.ostavljena
+inner join punica         f on e.sifra     = f.snasa 
+where d.lipa != 91.00 and c.haljina like '%ba%'
+order by e.kuna desc;
+
+
+#6 Prikažite kolone haljina i lipa iz tablice prijatelj 
+#  čiji se primarni ključ ne nalaze u tablici prijatelj_brat.
+select a.haljina, a.lipa 
+from prijatelj a left join prijatelj_brat b on a.sifra = b.prijatelj 
+where b.prijatelj is null;
