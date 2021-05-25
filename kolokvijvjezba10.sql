@@ -148,6 +148,10 @@ values  ('Zelena',33.35,1),
 delete from zena where maraka !=14.81;
 
 
+#4 Izlistajte kuna iz tablice svekrva uz uvjet da vrijednost kolone carape sadrže slova ana.
+select kuna from svekrva where carape like '%ana%';
+
+
 #5 Prikažite maraka iz tablice neprijatelj,
 #  indiferentno iz tablice zena 
 #  te lipa iz tablice mladic 
