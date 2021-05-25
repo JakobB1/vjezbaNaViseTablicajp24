@@ -148,4 +148,25 @@ values  ('Zelena',33.35,1),
 delete from zena where maraka !=14.81;
 
 
-#5 
+#5 Prikažite maraka iz tablice neprijatelj,
+#  indiferentno iz tablice zena 
+#  te lipa iz tablice mladic 
+#  uz uvjet da su vrijednosti kolone carape iz tablice svekrva počinju slovom a 
+#  te da su vrijednosti kolone eura iz tablice punac različite od 22. 
+#  Podatke posložite po lipa iz tablice mladic silazno.
+select a.maraka , f.indiferentno , e.lipa 
+from neprijatelj a
+inner join punac_neprijatelj  b on a.sifra      = b.neprijatelj 
+inner join punac              c on b.punac      = c.sifra
+inner join svekrva            d on c.sifra      = d.punac 
+inner join mladic             e on d.sifra      = e.svekrva 
+inner join zena               f on e.sifra      = f.mladic
+where d.carape like 'a&' and c.eura != 22
+order by e.lipa desc;
+
+
+#6 Prikažite kolone eura i stilfrizura iz tablice punac 
+#  čiji se primarni ključ ne nalaze u tablici punac_neprijatelj.
+select a.eura , a.stilfrizura 
+from punac a left join punac_neprijatelj b on b.punac = a.sifra 
+where b.punac is null;
