@@ -118,3 +118,5 @@ values  (1,3),
 #2 U tablici neprijatelj postavite svim zapisima kolonu novcica na vrijednost 13,77.
 update neprijatelj set novcica=13.77;  
 
+#3 U tablici cura obrišite sve zapise čija je vrijednost kolone hlace različito od AB.
+delete from cura where hlace like '%AB%';
