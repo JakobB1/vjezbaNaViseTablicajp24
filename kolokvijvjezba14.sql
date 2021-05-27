@@ -115,4 +115,6 @@ values  (1,3),
         (1,3),
         (1,3);
         
-       
+#2 U tablici neprijatelj postavite svim zapisima kolonu novcica na vrijednost 13,77.
+update neprijatelj set novcica=13.77;  
+
