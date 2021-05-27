@@ -139,3 +139,10 @@ inner join mladic e on d.sifra=e.ostavljen
 inner join cura f on e.sifra= f.mladic
 where d.drugiputa is not null and c.ogrlica =193
 order by e.carape desc;
+
+
+#6 Prikažite kolone ogrlica i ekstroventno iz tablice svekrva 
+#čiji se primarni ključ ne nalaze u tablici svekrva_svekar.
+select a.ogrlica , a.ekstroventno 
+from svekrva a left join svekrva_svekar b on a.sifra=b.svekrva
+where b.svekrva is null;
