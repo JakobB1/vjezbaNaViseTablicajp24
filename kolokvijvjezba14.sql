@@ -122,4 +122,20 @@ update neprijatelj set novcica=13.77;
 delete from cura where hlace like '%AB%';
 
 #4 Izlistajte asocijalno iz tablice ostavljen uz uvjet da vrijednost kolone drugiputa nepoznate.
-select asocijalno from ostavljen where drugiputa is null;
+select asocijalno from ostavljen where drugiputa is not null;
+
+#5 Prikažite gustoca iz tablice svekar, 
+# majica iz tablice cura 
+# te carape iz tablice mladic uz 
+# uvjet da su vrijednosti kolone drugiputa iz tablice ostavljen poznate 
+# te da su vrijednosti kolone ogrlica iz tablice svekrva jednake broju 193. 
+# Podatke posložite po carape iz tablice mladic silazno. (
+select a.gustoca , f.majica , e.carape 
+from svekar a
+inner join svekrva_svekar b on a.sifra = b.svekar 
+inner join svekrva c on b.svekrva = c.sifra 
+inner join ostavljen d on c.sifra=d.svekrva 
+inner join mladic e on d.sifra=e.ostavljen
+inner join cura f on e.sifra= f.mladic
+where d.drugiputa is not null and c.ogrlica =193
+order by e.carape desc;
