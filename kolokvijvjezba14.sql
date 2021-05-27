@@ -120,3 +120,6 @@ update neprijatelj set novcica=13.77;
 
 #3 U tablici cura obrišite sve zapise čija je vrijednost kolone hlace različito od AB.
 delete from cura where hlace like '%AB%';
+
+#4 Izlistajte asocijalno iz tablice ostavljen uz uvjet da vrijednost kolone drugiputa nepoznate.
+select asocijalno from ostavljen where drugiputa is null;
