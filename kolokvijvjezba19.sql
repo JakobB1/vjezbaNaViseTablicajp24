@@ -69,3 +69,11 @@ create table svekar(
   kuna decimal(13,6) not null,
   decko int 
 );
+
+alter table punica_ostavljena add foreign key (punica) references punica(sifra);
+alter table punica_ostavljena add foreign key (ostavljena) references ostavljena(sifra);
+
+alter table muskarac add foreign key (svekrva) references svekrva(sifra);
+alter table svekrva add foreign key (punac) references punac(sifra);
+alter table punac add foreign key (punica) references punica(sifra);
+alter table svekar add foreign key (decko) references decko(sifra);
