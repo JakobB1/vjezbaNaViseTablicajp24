@@ -121,4 +121,7 @@ update zena set lipa=13.77;
 #3 U tablici svekrva obrišite sve zapise čija je vrijednost kolone ogrlica različito od 18.
 delete from zena where ogrlica !=18;
 
+#4 Izlistajte prstena iz tablice brat uz uvjet da vrijednost kolone dukserica sadrže slova ana.
+select prstena from brat where dukserica like '%ana%
 
+'
