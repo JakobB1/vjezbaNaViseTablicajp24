@@ -2,6 +2,8 @@ drop database if exists kolokvijvjezba15;
 create database kolokvijvjezba15;
 use kolokvijvjezba15;
 
+
+#0 Kreirajte tablice (16) i veze između tablica.
 create table punac_zarucnik(
   sifra int not null primary key auto_increment,
   punac int not null,
@@ -73,3 +75,42 @@ create table prijatelj(
   hlace varchar(42)
 );
 
+alter table zena add foreign key(prijatelj) references prijatelj(sifra);
+alter table svekrva add foreign key(mladic) references mladic(sifra);
+alter table mladic add foreign key(brat) references brat(sifra);
+alter table brat add foreign key(punac) references punac(sifra);
+
+alter table punac_zarucnik add foreign key(punac) references punac(sifra);
+alter table punac_zarucnik add foreign key(zarucnik) references zarucnik(sifra);
+
+
+#1 U tablice mladic, brat i punac_zarucnik unesite po 3 retka.   
+select * from punac;
+insert into punac(treciputa)
+values  ('2013-09-23'),
+        ('2014-03-03'),
+        ('2015-05-13');
+        
+select * from brat;
+insert into brat(vesta,majica,punac)
+values  ('Zelena','Crna',1),
+        ('Plava','Zuta',2),
+        ('Crvena','Bijela',3);
+        
+select * from mladic;
+insert into mladic(treciputa,brat)
+values  ('2019-04-22',1),
+        ('2019-04-22',2),
+        ('2019-04-22',3);
+        
+select * from zarucnik;
+insert into zarucnik(novcica,bojakose,kuna,prstena,kratkamajica,nausnica)
+values  (30.43,'Crvena',32.71,6,'Zelena',3),
+        (20.52,'Plava',21.21,2,'Crvena',4),
+        (10.13,'Zelena',167.31,9,'Plava',7);
+        
+select * from punac_zarucnik;
+insert into punac_zarucnik(punac,zarucnik)
+values   (1,3),
+         (2,2),
+         (3,1);
