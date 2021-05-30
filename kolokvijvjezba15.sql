@@ -122,6 +122,20 @@ update zena set lipa=13.77;
 delete from zena where ogrlica !=18;
 
 #4 Izlistajte prstena iz tablice brat uz uvjet da vrijednost kolone dukserica sadrže slova ana.
-select prstena from brat where dukserica like '%ana%
+select prstena from brat where dukserica like '%ana%';
 
-'
+#5 Prikažite kuna iz tablice zarucnik, 
+#  drugiputa iz tablice svekrva 
+#  te lipa iz tablice mladic 
+#  uz uvjet da su vrijednosti kolone dukserica iz tablice brat počinju slovom a 
+#  te da su vrijednosti kolone bojakose iz tablice punac sadrže niz znakova ba. 
+#  Podatke posložite po lipa iz tablice mladic silazno.
+select a.kuna , f.drugiputa , e.lipa 
+from zarucnik a
+inner join punac_zarucnik b on a.sifra = b.zarucnik 
+inner join punac c on b.punac = c.sifra 
+inner join brat d on c.sifra=d.punac 
+inner join mladic e on d.sifra=e.brat
+inner join svekrva f on e.sifra= f.mladic
+where d.dukserica like 'a%' and c.bojakose like '%ba%'
+order by e.lipa desc;
