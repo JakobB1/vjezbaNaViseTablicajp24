@@ -118,4 +118,7 @@ values   (1,3),
 #2 U tablici zena postavite svim zapisima kolonu lipa na vrijednost 13,77.
 update zena set lipa=13.77;
 
+#3 U tablici svekrva obrišite sve zapise čija je vrijednost kolone ogrlica različito od 18.
+delete from zena where ogrlica !=18;
+
 
