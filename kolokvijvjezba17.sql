@@ -69,3 +69,11 @@ create table prijatelj(
   carape varchar(33) not null,
   stilfrizura varchar(35)
 );
+
+alter table brat_becar add foreign key (brat) references brat(sifra);
+alter table brat_becar add foreign key (brat) references becar(sifra);
+
+alter table prijateljica add foreign key (cura) references cura(sifra);
+alter table cura add foreign key (ostavljen) references ostavljen(sifra);
+alter table ostavljen add foreign key (brat) references brat(sifra);
+alter table punica add foreign key (prijatelj) references prijatelj(sifra);
