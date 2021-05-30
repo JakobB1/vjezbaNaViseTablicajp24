@@ -114,3 +114,8 @@ insert into punac_zarucnik(punac,zarucnik)
 values   (1,3),
          (2,2),
          (3,1);
+         
+#2 U tablici zena postavite svim zapisima kolonu lipa na vrijednost 13,77.
+update zena set lipa=13.77;
+
+
