@@ -9,7 +9,8 @@ create table sestra(
   maraka decimal(13,8),
   ogrlica int,
   haljina varchar(31) not null,
-  introvertno int 
+  introvertno int ,
+  mladic int 
 );
 
 create table zarucnica(
@@ -69,3 +70,11 @@ create table ostavljena(
   kratkamajica varchar(34),
   djevojka int not null
 );
+
+alter table muskarac_prijatelj add foreign key (muskarac) references muskarac(sifra);
+alter table muskarac_prijatelj add foreign key (prijatelj) references prijatelj(sifra);
+
+alter table zarucnica add foreign key (sestra) references sestra(sifra);
+alter table sestra add foreign key (mladic) references mladic(sifra);
+alter table mladic add foreign key (muskarac) references muskarac(sifra);
+alter table ostavljena add foreign key (djevojka) references djevojka(sifra);
