@@ -75,3 +75,11 @@ create table zena_brat(
   zena int not null,
   brat int not null
 );
+
+alter table zena_brat add foreign key (zena) references zena(sifra);
+alter table zena_brat add foreign key (brat) references brat(sifra);
+
+alter table svekrva add foreign key (ostavljen) references ostavljen(sifra);
+alter table ostavljen add foreign key (cura) references cura(sifra);
+alter table cura add foreign key (zena) references zena(sifra);
+alter table djevojka add foreign key (mladic) references mladic(sifra);
