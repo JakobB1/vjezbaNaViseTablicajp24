@@ -139,3 +139,8 @@ inner join mladic e on d.sifra=e.brat
 inner join svekrva f on e.sifra= f.mladic
 where d.dukserica like 'a%' and c.bojakose like '%ba%'
 order by e.lipa desc;
+
+#6 Prikažite kolone bojakose i novcica iz tablice punac čiji se primarni ključ ne nalaze u tablici punac_zarucnik.
+select a.bojakose , a.novcica 
+from punac a left join punac_zarucnik b on a.sifra = b.punac 
+where b.punac is null;
