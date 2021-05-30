@@ -73,3 +73,11 @@ create table mladic_zarucnik(
   mladic int not null,
   zarucnik int not null
 );
+
+alter table mladic_zarucnik add foreign key (mladic) references mladic(sifra);
+alter table mladic_zarucnik add foreign key (zarucnik) references zarucnik(sifra);
+
+alter table zarucnica add foreign key (decko) references decko(sifra);
+alter table decko add foreign key (punica) references punica(sifra);
+alter table punica add foreign key (mladic) references mladic(sifra);
+alter table neprijateljica add foreign key (zena) references zena(sifra);
