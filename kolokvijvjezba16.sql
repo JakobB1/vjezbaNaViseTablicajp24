@@ -5,7 +5,7 @@ use kolokvijvjezba16;
 create table punac_zarucnik(
   sifra int not null primary key auto_increment,
   punac int not null,
-  zarunik int not null
+  zarucnik int not null
 );
 
 create table zarucnik(
@@ -70,3 +70,11 @@ create table prijatelj(
   asocijalno bit not null,
   hlace varchar(42)
 );
+
+alter table punac_zarucnik add foreign key (zarucnik) references zarucnik(sifra);
+alter table punac_zarucnik add foreign key (punac) references punac(sifra);
+
+alter table svekrva add foreign key (mladic) references mladic(sifra);
+alter table mladic add foreign key (brat) references brat(sifra);
+alter table brat add foreign key (punac) references punac(sifra);
+alter table zena add foreign key (prijatelj) references prijatelj(sifra);
