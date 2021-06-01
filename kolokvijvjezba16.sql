@@ -78,3 +78,35 @@ alter table svekrva add foreign key (mladic) references mladic(sifra);
 alter table mladic add foreign key (brat) references brat(sifra);
 alter table brat add foreign key (punac) references punac(sifra);
 alter table zena add foreign key (prijatelj) references prijatelj(sifra);
+
+
+#1 U tablice mladic, brat i punac_zarucnik unesite po 3 retka.
+select * from punac;
+insert into punac(treciputa)
+values  ('2014-11-21'),
+        ('2015-08-11'),
+        ('2017-04-26');
+
+select * from brat;
+insert into brat(vesta,majica,punac)
+values  ('Plava','Crna',1),
+        ('Plava','Crna',2),
+        ('Plava','Crna',3);
+
+select * from mladic;
+insert into mladic(treciputa,brat)
+values  ('2020-11-21',1),
+        ('2019-01-21',2),
+        ('2021-04-06',3);
+
+select * from zarucnik;
+insert into zarucnik(novcica,bojakose,kuna,prstena,kratkamajica,nausnica)
+values  (21.33,'Crna',12.32,1,'Zuta',5),
+        (321.33,'Plava',12.32,4,'Plava',7),
+        (121.33,'Zelena',12.32,7,'Zelena',3);
+
+select * from punac_zarucnik;
+insert into punac_zarucnik(punac,zarucnik)
+values  (1,3),
+        (2,2),
+        (3,1);
