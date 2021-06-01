@@ -168,4 +168,4 @@ order by e.gustoca desc;
 #  čiji se primarni ključ ne nalaze u tablici zarucnik_mladic.
 select a.asocijalno , a.modelnaocala 
 from zarucnik a left join zarucnik_mladic b on b.zarucnik = a.sifra 
-where b.zarucnik is null;
+where b.zarucnik is null; 

@@ -154,4 +154,4 @@ order by e.kratkamajica desc;
 #  čiji se primarni ključ ne nalaze u tablici zena_mladic.
 select a.lipa, a.prstena 
 from zena a left join zena_mladic b on a.sifra = b.zena
-where b.zena is null;
+where b.zena is null; 

@@ -172,4 +172,4 @@ order by e.kuna desc;
 #  čiji se primarni ključ ne nalaze u tablici prijatelj_brat.
 select a.haljina, a.lipa 
 from prijatelj a left join prijatelj_brat b on a.sifra = b.prijatelj 
-where b.prijatelj is null;
+where b.prijatelj is null; 

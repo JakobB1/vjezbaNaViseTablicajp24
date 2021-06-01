@@ -164,4 +164,4 @@ order by e.hlace desc;
 # čiji se primarni ključ ne nalaze u tablici sestra_svekar.
 select a.haljina, a.maraka 
 from sestra a inner join sestra_svekar b on a.sifra = b.sestra 
-where b.sestra is null;
+where b.sestra is null;  

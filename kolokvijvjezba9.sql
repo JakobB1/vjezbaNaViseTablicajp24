@@ -162,4 +162,4 @@ order by e.ekstroventno;
 #  čiji se primarni ključ ne nalaze u tablici punac_prijateljica.
 select a.modelnaocala , a.kuna 
 from punac a left join punac_prijateljica b on b.punac = a.sifra 
-where b.punac is null;
+where b.punac is null; 

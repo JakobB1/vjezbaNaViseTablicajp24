@@ -1,4 +1,4 @@
-drop database if exists kolokvijvjezba8;
+ drop database if exists kolokvijvjezba8;
 create database kolokvijvjezba8;
 use kolokvijvjezba8;
 
@@ -158,4 +158,4 @@ order by e.introvertno desc;
 #  čiji se primarni ključ ne nalaze u tablici muskarac_decko.
 select a.drugiputa , a.treciputa 
 from muskarac a left join muskarac_decko b on b.muskarac = a.sifra 
-where b.muskarac is null;
+where b.muskarac is null; 

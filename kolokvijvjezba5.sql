@@ -167,4 +167,4 @@ order by e.nausnica desc;
 #  čiji se primarni ključ ne nalaze u tablici svekar_cura.
 select a.majica , a.carape 
 from svekar a left join svekar_cura b on a.sifra = b.svekar
-where b.svekar is null; 
+where b.svekar is null;  
